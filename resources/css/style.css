@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #073BBE;
+    --secondary-color: #333;
+    --white-color: #f9f9f9;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Styles */
+.nav_logo a {
+    margin-right: auto;
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav_logo a:hover {
+    color: var(--secondary-color);
+}
+
+/* Navigation Links */
+.nav_links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.grup-kiri {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    flex-grow: 1;
+}
+
+.grup-kanan {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav_links .link {
+    display: flex;
+    align-items: center;
+}
+
+/* Menghapus redundansi dengan menggabungkan .nav_links .link a dan .link a */
+.nav_links .link a {
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav_links .link a:hover {
+    color: var(--primary-color);
+}
+
+/* Icons Style */
+.nav_links i {
+    font-size: 18px;
+    padding: 1px;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.nav_links i:hover {
+    color: var(--primary-color);
+}
+
+/* Login Button Style */
+.nav_links .link .nav_btn {
+    padding: .5rem 1.5rem;
+    color: var(--white-color) !important; /* Memastikan warna text tetap */
+    background-color: var(--primary-color);
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    /* Tambahan untuk memastikan font selalu terlihat */
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.nav_links .link .nav_btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color) !important;
+}
+
+/* Pastikan parent elements tidak mempengaruhi button */
+.nav_links .link {
+    display: flex;
+    align-items: center;
+}
+
+.nav_links .link:last-child a {
+    padding: .5rem 1.5rem; /* Menyamakan padding dengan nav_btn */
+}
+
+/* Icon Spacing */
+.nav_links li:nth-child(4) {
+    margin-right: -20px;
+}
+
+.nav_links li:nth-child(5) {
+    margin-left: 2px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    color: var(--secondary-color);
+    padding: 14px 16px;
+    background-color: transparent;
+    font-family: inherit;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.dropdown .dropbtn:hover {
+    color: var(--primary-color);
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white-color);
+    min-width: 300px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content .dropdown-grid {
+    display: grid; /* Baru atau Diperbarui */
+    grid-template-columns: repeat(3, 1fr); /* Membagi menjadi 3 kolom */
+    gap: 10px; 
+}
+
+.dropdown-content .dropdown-item {
+    text-align: center; 
+    background-color: var(--white-color); 
+    padding: 15px; 
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 140px;
+    height: 180px;
+}
+
+.dropdown-content .dropdown-item img {
+    width: 120px; 
+    height: 120px; 
+    margin: 0 auto 10px;
+    display: block; 
+    border-radius: 5px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+.dropdown-content .dropdown-item:hover img {
+    transform: scale(1.1); /* Tambahkan efek zoom saat hover */
+}
+
+.dropdown-content .dropdown-item h5 {
+    font-size: 18px; /* Baru atau Diperbarui */
+    font-weight: 600; /* Baru atau Diperbarui */
+    color: var(--secondary-color); /* Baru atau Diperbarui */
+    margin-top: 5px; /* Baru atau Diperbarui */
+    transition: color var(--transition-time) ease; /* Baru atau Diperbarui */
+    text-align: center;
+}
+
+.dropdown-content .dropdown-item:hover {
+    transform: translateY(-5px); /* Baru atau Diperbarui */
+    background-color: var(--primary-color); /* Baru atau Diperbarui */
+}
+
+.dropdown-content .dropdown-item:hover h5 {
+    color: var(--white-color); /* Baru atau Diperbarui */
+}   
+
+
+/* Responsive dropdown grid */
+@media (max-width: 768px) {
+    .dropdown-content .dropdown-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mengubah menjadi 2 kolom */ 
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-content .dropdown-grid {
+        grid-template-columns: repeat(1, 1fr); /* Satu kolom untuk perangkat kecil */ 
+    }
+}
+
+.dropbtn i {
+    font-size: 16px; /* Ukuran ikon dropdown */
+    color: var(--secondary-color); /* Warna ikon sesuai dengan teks */
+    transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan animasi */
+}
+
+/* Efek hover untuk ikon dan teks dropdown */
+.dropbtn:hover i {
+    transform: rotate(180deg); /* Ikon dropdown akan berputar */
+    color: var(--primary-color); /* Warna berubah saat hover */
+}
+
+.dropdown-content a {
+    float: none;
+    color: var(--secondary-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* Image Section */
+.nav_image {
+    position: relative;
+    width: 100%;
+    max-width: 1361px;
+    height: 498px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.nav_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Overlay */
+.text-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 10;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.text-overlay h1 {
+    font-size: 36px;
+    margin: 0;
+    border-radius: 100px;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid  var(--primary-color);
+    display: inline-block;
+}
+
+.text-overlay span {
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 2; /* Memastikan konten berada di atas gambar */
+}
+
+.content_container {
+    text-align: center;
+    margin-bottom: 2rem; /* Jarak antara teks dan gambar */
+}
+
+.content_container h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.content_container span {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--white-color);
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* Container Image dan Text */
+.nav_image {
+    position: relative;
+    width: 100%;
+    max-width: 1361px;
+    height: 498px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.nav_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Overlay Styles */
+.content_container {
+    position: absolute;
+    bottom: 40px;  /* Jarak dari bawah */
+    left: 40px;    /* Jarak dari kiri */
+    z-index: 2;
+    text-align: left;
+    max-width: 600px; /* Maksimum lebar teks */
+}
+
+.content_container h1 {
+    font-size: 2.8rem;
+    color: var(--white-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0.9; /* Sedikit transparan */
+    line-height: 1.2;
+    padding: 0.5rem 1rem; /* Ruang di dalam border */
+    border: 2px solid var(--primary-color); /* Tambahkan border */
+    border-radius: 8px; /* Membulatkan sudut */
+    background-color: var(--primary-color); /* Isi penuh dengan warna utama */
+    display: inline-block; /* Pastikan border melingkupi teks */
+}
+
+.content_container span {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--white-color);
+    opacity: 0.7; /* Lebih transparan dari judul */
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Optional: Menambahkan gradient overlay untuk memastikan teks tetap terbaca */
+.nav_image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content_container {
+        bottom: 20px;
+        left: 20px;
+        max-width: 80%;
+    }
+
+    .content_container h1 {
+        font-size: 2rem;
+    }
+
+    .content_container span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content_container {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .content_container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .content_container span {
+        font-size: 0.9rem;
+    }
+
+    .nav_image {
+        height: 350px;
+    }
+}
+
+.layanan-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.layanan-item {
+    text-align: center;
+    width: 50%;
+}
+
+.layanan-item:hover {
+    transform: scale(1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.layanan-item img {
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.layanan-item:hover img {
+    transform: scale(1.1);
+}
+
+.layanan-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+.layanan-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+.company-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.profile-info {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  
+.profile-info h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.profile-info .tagline {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.profile-info .description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-learn-more {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-learn-more:hover {
+    background-color: yellow;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.testimonials h1{
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat grid dengan kolom yang fleksibel */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.testimonial {
+    display: flex;
+    background-color: #b0d9e6;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.testimonial-text {
+    max-width: 600px;
+}
+
+.quote {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.name {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+    .testimonials {
+        grid-template-columns: 1fr; /* Hanya satu kolom pada layar kecil */
+    }
+
+    .testimonial {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-image img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.container-jasa {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 4, 255, 0.1); /* Efek shadow */
+}
+
+form {
+    display: flex;
+    justify-content: space-between; /* Membuat ruang antara dropdown dan tombol */
+    align-items: center;
+    gap: 20px; /* Mengurangi jarak antar elemen */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 45%; /* Membuat lebar form group lebih proporsional */
+}
+
+.form-group label {
+    margin-bottom: 5px; /* Sedikit jarak antara label dan dropdown */
+    font-size: 14px; /* Menyesuaikan ukuran font label agar lebih kompak */
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px; /* Mengurangi jarak bawah dropdown */
+    width: 100%; /* Dropdown memenuhi lebar form */
+}
+
+button {
+    padding: 8px 15px; /* Tombol lebih kecil */
+    background-color: var(--primary-color);
+    font-size: 15px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto; /* Tombol menyesuaikan ukuran berdasarkan teks */
+    margin-top: -13px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    button {
+        width: 100%; /* Tombol mengisi seluruh lebar pada layar kecil */
+    }
+}
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-color);
+    color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-contact h4 {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Flexbox untuk mengatur baris dan spasi antar elemen */
+.contact-info {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: space-between; /* Menyebarkan elemen secara merata di baris */
+    gap: 20px; /* Jarak antar elemen */
+    margin-bottom: 20px; /* Jarak antara info kontak dan alamat */
+}
+
+/* Styling tiap item kontak */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon dan teks */
+    font-size: 14px;
+}
+
+.contact-item i {
+    font-size: 18px; /* Ukuran ikon */
+    color: #fff;
+}
+
+/* Link styling */
+.contact-item a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #fff;
+}
+
+.footer-address {
+    font-size: 14px;
+}
+
+.footer-address i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.footer-contact strong {
+    color: #fff;
+}
+
+/* Responsif: Tampilan lebih rapi pada perangkat kecil */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Menyusun elemen secara vertikal pada layar kecil */
+        align-items: center; /* Centerkan elemen dalam kolom */
+    }
+
+    .contact-item {
+        width: 100%; /* Membuat elemen kontak lebar 100% pada layar kecil */
+        justify-content: flex-start; /* Menjaga kontak tetap di kiri */
+    }
+
+    .contact-item i {
+        margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
+    }
+}
+
+section + h2.judul-mitra,
+.testimonials + h2.judul-mitra {
+    font-size: 40px;
+    text-align: center;
+    color: #073BBE;
+}
+
+.element {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .element:hover {
+    transform: scale(1.1);
+  }
