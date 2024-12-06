@@ -44,7 +44,8 @@ body {
 
 .wrapper form .row {
   height: 60px;
-  margin-top: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   position: relative;
 }
 
@@ -81,20 +82,6 @@ form .row input::placeholder {
   justify-content: center;
 }
 
-.wrapper form .pass {
-  margin-top: 12px;
-}
-
-.wrapper form .pass a {
-  color: #16a085;
-  font-size: 17px;
-  text-decoration: none;
-}
-
-.wrapper form .pass a:hover {
-  text-decoration: underline;
-}
-
 .wrapper form .button input {
   margin-top: 20px;
   color: #fff;
@@ -108,19 +95,4 @@ form .row input::placeholder {
 
 form .button input:hover {
   background: #12876f;
-}
-
-.wrapper form .signup-link {
-  text-align: center;
-  margin-top: 45px;
-  font-size: 17px;
-}
-
-.wrapper form .signup-link a {
-  color: #16a085;
-  text-decoration: none;
-}
-
-form .signup-link a:hover {
-  text-decoration: underline;
 }
