@@ -14,11 +14,11 @@
     <form action="#">
       <div class="row">
         <i class="fas fa-user"></i>
-        <input type="text" placeholder="UserName" required />
+        <input type="text" placeholder="Username" required />
       </div>
       <div class="row">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Kata Sandi" required />
       </div>
       <div class="row button">
         <input type="submit" value="Login" />
