@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('register', \App\Http\Controllers\Api\Auth\RegisterController::class);
+Route::post('/register', [RegisterController::class, 'register']);
