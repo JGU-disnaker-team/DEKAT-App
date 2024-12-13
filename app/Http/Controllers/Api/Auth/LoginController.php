@@ -16,7 +16,12 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
-            return response()->json(['success' => 'Anda berhasil login']);
+
+            return response()->json([
+
+                'token'=> Auth::user()->createToken('DEKAT-App')->plainTextToken,
+
+            ]);
         }
 
         return response()->json([

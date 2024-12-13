@@ -26,6 +26,10 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return response()->json($registered);
+        $token = $registered->createToken('DEKAT-App')->plainTextToken;
+
+        return response()->json([
+            'token' => $token
+        ]);
     }
 }
