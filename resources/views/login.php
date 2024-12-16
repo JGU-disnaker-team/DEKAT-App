@@ -77,30 +77,11 @@
             <div class="grid md:grid-cols-2 gap-8 w-full">
                 <!-- Left Side - 3D Illustration -->
                 <div class="hidden md:flex items-center justify-center bg-custom-blue rounded-2xl side-container">
-                    <div class="w-full max-w-md p-8">
-                        <svg viewBox="0 0 400 400" class="w-full h-auto">
-                            <!-- Phone Border -->
-                            <rect x="100" y="50" width="200" height="300" rx="20" fill="white" stroke="#FFD700" stroke-width="8"/>
-                            
-                            <!-- User Icon Background -->
-                            <circle cx="200" cy="150" r="40" fill="#6B7AFF"/>
-                            
-                            <!-- User Icon -->
-                            <circle cx="200" cy="140" r="20" fill="white"/>
-                            <path d="M170 180 Q200 220 230 180" fill="white" stroke="white" stroke-width="4"/>
-                            
-                            <!-- Checkmark Circle -->
-                            <circle cx="270" cy="220" r="45" fill="#FFD700"/>
-                            <path d="M250 220 L265 235 L290 205" stroke="white" stroke-width="8" fill="none"/>
-                            
-                            <!-- Password Dots -->
-                            <circle cx="175" cy="270" r="5" fill="#333"/>
-                            <circle cx="200" cy="270" r="5" fill="#333"/>
-                            <circle cx="225" cy="270" r="5" fill="#333"/>
-                        </svg>
+                    <div class="w-full max-w-md p-8 flex items-center justify-center">
+                        <img src="img/protection.png" alt="Protection" class="max-w-full max-h-full object-contain">
                     </div>
                 </div>
-
+                
                 <!-- Right Side - Login Form -->
                 <div class="w-full side-container">
                     <div class="main-card p-8 md:p-10 w-full max-w-md mx-auto">
