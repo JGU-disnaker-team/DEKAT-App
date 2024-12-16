@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #073BBE;
+    --secondary-color: #333;
+    --white-color: #f9f9f9;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+    position: relative;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Styles */
+.nav_logo a {
+    margin-right: auto;
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav_logo a:hover {
+    color: var(--secondary-color);
+}
+
+/* Navigation Links */
+.nav_links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.grup-kiri {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    flex-grow: 1;
+}
+
+.grup-kanan {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* gap: 0.1rem; */
+    margin-left: -100px;
+    /* outline: 1px solid red; */
+}
+
+.nav_links .link {
+    display: flex;
+    align-items: center;
+}
+
+/* Menghapus redundansi dengan menggabungkan .nav_links .link a dan .link a */
+.nav_links .link a {
+    padding: 0.5rem 0.5rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav_links .link a:hover {
+    color: var(--primary-color);
+}
+
+/* Icons Style */
+.nav_links i {
+    font-size: 18px;
+    margin-right: 0;
+    padding: 0;
+    color: var(--secondary-color);
+    background: none;
+    border: none;
+    transition: color 0.3s ease;
+    /* outline: 5px solid blue; */
+}
+
+.nav_links i:hover {
+    color: var(--primary-color);
+}
+
+/* Login Button Style */
+.nav_links .link .nav_btn {
+    padding: .5rem 1.5rem;
+    color: var(--white-color) !important; /* Memastikan warna text tetap */
+    background-color: var(--primary-color);
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    /* Tambahan untuk memastikan font selalu terlihat */
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.nav_links .link .nav_btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color) !important;
+}
+
+/* Pastikan parent elements tidak mempengaruhi button */
+.nav_links .link {
+    display: flex;
+    align-items: center;
+}
+
+.nav_links .link:last-child a {
+    padding: 0.5rem 1.5rem; /* Menyamakan padding dengan nav_btn */
+}
+
+.nav_links li {
+    list-style: none; /* Hilangkan bullet */
+    margin: 0; /* Hilangkan margin */
+    padding: 0; /* Hilangkan padding */
+    background: none; /* Hilangkan warna latar */
+    border: none; /* Hilangkan border */
+}
+
+
+/* Icon Spacing
+.nav_links li:nth-child(4) {
+    margin-right: -100px;
+}
+
+.nav_links li:nth-child(5) {
+    margin-left: 2px;
+} */
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    color: var(--secondary-color);
+    padding: 14px 16px;
+    background-color: transparent;
+    font-family: inherit;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.dropdown .dropbtn:hover {
+    color: var(--primary-color);
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white-color);
+    min-width: 300px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content .dropdown-grid {
+    display: grid; /* Baru atau Diperbarui */
+    grid-template-columns: repeat(3, 1fr); /* Membagi menjadi 3 kolom */
+    gap: 10px; 
+}
+
+.dropdown-content .dropdown-item {
+    text-align: center; 
+    background-color: var(--white-color); 
+    padding: 15px; 
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 140px;
+    height: 180px;
+}
+
+.dropdown-content .dropdown-item img {
+    width: 120px; 
+    height: 120px; 
+    margin: 0 auto 10px;
+    display: block; 
+    border-radius: 5px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+.dropdown-content .dropdown-item:hover img {
+    transform: scale(1.1); /* Tambahkan efek zoom saat hover */
+}
+
+.dropdown-content .dropdown-item h5 {
+    font-size: 18px; /* Baru atau Diperbarui */
+    font-weight: 600; /* Baru atau Diperbarui */
+    color: var(--secondary-color); /* Baru atau Diperbarui */
+    margin-top: 5px; /* Baru atau Diperbarui */
+    transition: color var(--transition-time) ease; /* Baru atau Diperbarui */
+    text-align: center;
+}
+
+.dropdown-content .dropdown-item:hover {
+    transform: translateY(-5px); /* Baru atau Diperbarui */
+    background-color: var(--primary-color); /* Baru atau Diperbarui */
+}
+
+.dropdown-content .dropdown-item:hover h5 {
+    color: var(--white-color); /* Baru atau Diperbarui */
+}
+
+/* Menyejajarkan Ikon dengan Profil */
+.grup-kanan .icon {
+    display: flex;
+    align-items: center; /* Pastikan ikon rata secara vertikal */
+    justify-content: center;
+    width: 35px; /* Ukuran yang sama dengan ikon profil */
+    height: 35px;
+}
+
+.profile-icon {
+    top: 10px;
+    right: 20px;
+    display: flex;
+    width: 35px;
+    height: 34px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+    /* outline: 5px solid green; */
+}
+
+.circle {
+    top: 10px;
+    right: 20px;
+    width: 35px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0;
+}
+
+/* Responsive dropdown grid */
+@media (max-width: 768px) {
+    .dropdown-content .dropdown-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mengubah menjadi 2 kolom */ 
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-content .dropdown-grid {
+        grid-template-columns: repeat(1, 1fr); /* Satu kolom untuk perangkat kecil */ 
+    }
+}
+
+.dropbtn i {
+    font-size: 16px; /* Ukuran ikon dropdown */
+    color: var(--secondary-color); /* Warna ikon sesuai dengan teks */
+    transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan animasi */
+}
+
+/* Efek hover untuk ikon dan teks dropdown */
+.dropbtn:hover i {
+    transform: rotate(180deg); /* Ikon dropdown akan berputar */
+    color: var(--primary-color); /* Warna berubah saat hover */
+}
+
+.dropdown-content a {
+    float: none;
+    color: var(--secondary-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+.layanan-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.layanan-item {
+    text-align: center;
+    width: 50%;
+}
+
+.layanan-item:hover {
+    transform: scale(1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.layanan-item img {
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.layanan-item:hover img {
+    transform: scale(1.1);
+}
+
+.layanan-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+.layanan-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Dropdown Menu */
+.dropdown-contentmenu {
+    display: none;
+    position: absolute;
+    top: 50px; /* Jarak dari ikon profil */
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Header Dropdown */
+.dropdown-contentmenu .profile-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dropdown-contentmenu .profile-pic {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.dropdown-contentmenu .profile-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.dropdown-contentmenu .profile-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.profile-info .edit-profile {
+font-size: 10px;
+text-decoration: none;
+}
+
+
+.dropdown-contentmenu .edit-profile {
+    font-size: 120px;
+    text-decoration: none;
+    color: var(--primary-color) !important;
+    text-align: left !important;
+    text-align-last: left;
+    display: block;
+    margin-right: 30px;
+}
+
+.dropdown-contentmenu .edit-profile:hover {
+    text-decoration: underline;
+    color: var(--primary-color) !important;
+}
+
+
+/* Menu Items */
+.dropdown-contentmenu .profile-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-contentmenu .profile-menu li {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-contentmenu .profile-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-contentmenu .profile-menu li i {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Logout Button */
+.dropdown-contentmenu .logout {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.dropdown-contentmenu .logout a {
+    font-size: 14px;
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+.dropdown-contentmenu .logout a:hover {
+    text-decoration: underline;
+}
+
+/* Show Dropdown */
+.dropdown-contentmenu.show {
+    display: block;
+    /* background-color: red; */
+}
+
+.about-section {
+    max-width: 500px;
+    margin-top: 130px;
+    /* margin-bottom: 100px; */
+    /* margin-right: 100px; */
+    margin-left: 700px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-section h1 {
+    font-size: 32px;
+    color: #1e42d1;
+    margin-bottom: 20px;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .about-image {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    width: 100%;
+  }
+  
+  .about-image img {
+    max-width: 30%;
+    height: 50%;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e42d1;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
