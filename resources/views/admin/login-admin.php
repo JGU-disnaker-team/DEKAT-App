@@ -13,8 +13,8 @@
     <div class="title"><span>Admin</span></div>
     <form action="#">
       <div class="row">
-        <i class="fas fa-user"></i>
-        <input type="text" placeholder="Username" required />
+        <i class="fa-solid fa-at"></i>
+        <input type="text" placeholder="Email" required />
       </div>
       <div class="row">
         <i class="fas fa-lock"></i>
