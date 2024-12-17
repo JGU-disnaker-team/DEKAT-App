@@ -86,8 +86,8 @@
                 <div class="w-full">
                     <div class="main-card p-8 md:p-10 w-full max-w-md mx-auto">
                         <div class="text-center mb-8">
-                            <h1 class="text-custom-blue text-xl mb-2">Aktivasi Akun</h1>
-                            <h2 class="text-custom-blue text-4xl font-bold">Ubah Kata Sandi</h2>
+                            <h1 class="text-custom-blue text-4xl font-bold">Aktivasi Akun</h1>
+                            <h2 class="text-custom-blue text-xl mb-2">Ubah Kata Sandi untuk Aktivasi Akun</h2>
                         </div>
 
                         <form class="space-y-6">
