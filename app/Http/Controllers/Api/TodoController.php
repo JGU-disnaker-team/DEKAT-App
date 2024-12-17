@@ -12,7 +12,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        dd('oke');
+        dd('EWtf');
     }
 
     /**
