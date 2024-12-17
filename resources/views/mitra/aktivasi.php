@@ -82,7 +82,7 @@
                     </div>
                 </div>
 
-                <!-- Right Side - Activation Form -->
+                <!-- Right Side - Activation Form. -->
                 <div class="w-full">
                     <div class="main-card p-8 md:p-10 w-full max-w-md mx-auto">
                         <div class="text-center mb-8">
