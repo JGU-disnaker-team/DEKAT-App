@@ -168,7 +168,7 @@ form .page .btns button.next{
     0% { transform: scaleX(0); background: #f0ad4e; }
     100% { transform: scaleX(1); background: #007bff; }
   }
-}
+
 .progress-bar .step:last-child .bullet:before,
 .progress-bar .step:last-child .bullet:after{
   display: none;
