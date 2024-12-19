@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -15,11 +16,12 @@ class LoginController extends Controller
             'password' => ['required', 'min:8'],
         ]);
 
+        $user = User::where('email', $credentials['email'])->first();
         if(Auth::attempt($credentials)){
 
             return response()->json([
 
-                'token'=> Auth::user()->createToken('DEKAT-App')->plainTextToken,
+                'token' => $user->createToken('DEKAT-App')->plainTextToken,
 
             ]);
         }
