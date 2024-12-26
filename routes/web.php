@@ -9,10 +9,13 @@ use App\Http\Controllers\AdminController;
 // });
 
 //admin
-Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login.form');
-Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->middleware('admin.auth');
-Route::get('/admin/logout', [AdminController::class, 'logout']);
+Route::middleware(['admin.auth'])->group(function () {
+    Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login.form');
+    Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->middleware('admin.auth');
+    Route::get('/admin/logout', [AdminController::class, 'logout']);
+});
+
 
 
 //konsumen

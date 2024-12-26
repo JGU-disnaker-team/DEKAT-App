@@ -9,25 +9,6 @@ use App\Models\admin;
 
 class AdminController extends Controller
 {
-    public function register(Request $request)
-    {
-        // Validasi input
-        $request->validate([
-            'email' => 'required|email|unique:admins,email',
-            'password' => 'required|min:6',
-        ]);
-
-        // Hash password sebelum disimpan ke database
-        $hashedPassword = Hash::make('DEKATteam2024'); // Ganti 'password' dengan password yang ingin di-hash
-
-        // Menyimpan admin baru dengan password yang di-hash
-        Admin::create([
-            'email' => $request->email,
-            'password' => $hashedPassword,
-        ]);
-
-        return redirect()->route('admin.login')->with('success', 'Admin berhasil didaftarkan');
-    }
     public function showLoginForm()
     {
         return view('admin.login'); // resources/views/admin/login.blade.php
