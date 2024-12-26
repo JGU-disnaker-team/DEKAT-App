@@ -10,4 +10,9 @@ class admin extends Model
     protected $table = 'admin';
     protected $fillable = ['email', 'password'];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
 }
