@@ -12,19 +12,19 @@
                         <div class="dropdown-grid">
                             <a href="pemesanan.php">
                                 <div class="dropdown-item">
-                                    <img src="assets/ace.jpg" alt="Landing Page Image">
+                                    <img src="public/image/ace.jpg" alt="Landing Page Image">
                                     <h5>Service AC </h5>
                                 </div>
                             </a>
                             <a href="#">
                                 <div class="dropdown-item">
-                                    <img src="assets/mekap.jpg" alt="Landing Page Image">
+                                    <img src="public/image/mekap.jpg" alt="Landing Page Image">
                                     <h5>Make Up</h5>
                                 </div>
                             </a>
                             <a href="#">
                                 <div class="dropdown-item">
-                                    <img src="assets/mitra.jpg" alt="Landing Page Image">
+                                    <img src="public/image/mitra.jpg" alt="Landing Page Image">
                                     <h5>Mitra</h5>
                                 </div>
                             </a>
@@ -68,7 +68,7 @@
         </form>
     </div>
     <div class="nav_image">
-        <img src="assets/banner.jpg" alt="Landing Page Image">
+        <img src="public/image/banner.jpg" alt="Landing Page Image">
         <div class="content_container">
             <h1>
                 Hai, Selamat Datang!<br></h1>
@@ -79,18 +79,18 @@
     <div class="layanan-section">
         <div class="layanan-item" data-aos="fade-up" data-aos-duration="500">
             <a href="pemesanan.php">
-                <img src="assets/ace.jpg" alt="">
+                <img src="public/image/ace.jpg" alt="">
             </a>
             <h3>Service AC</h3>
             <p>Menyediakan pembersihan AC, Servis dan pengisian ulang freon, perbaikan dan instalasi AC, DLL</p>
         </div>
         <div class="layanan-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-            <img src="assets/mekap.jpg" alt="" a href="pemesanan.php">
+            <img src="public/image/mekap.jpg" alt="" a href="pemesanan.php">
             <h3>Make Up</h3>
             <p>Menyediakan Makeup Pengantin, Makeup untuk acara khusus, Makeup harian atau Casual, DLL</p>
         </div>
         <div class="layanan-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <img src="assets/barber.jpg" alt="" a href="#">
+            <img src="public/image/barber.jpg" alt="" a href="#">
             <h3>Barber Shop</h3>
             <p>Menyediakan Potong Rambut, Cukur Jenggot dan kumis, Pewarnaan Rambut, Styling Rambut, DLL</p>
         </div>
@@ -116,7 +116,7 @@
             Kata Mereka ?</h1>
         <div class="testimonial" data-aos="fade-left" data-aos-duration="1000">
             <div class="testimonial-image">
-                <img src="assets/testi.jpg" alt="Hendry">
+                <img src="public/image/testi.jpg" alt="Hendry">
             </div>
             <div class="testimonial-text">
                 <p class="quote">Pekerjaan rapih banget, tukang dan mandornya juga ramah banget. Terus enak juga minta
@@ -127,7 +127,7 @@
         </div>
         <div class="testimonial" data-aos="fade-left" data-aos-duration="1000">
             <div class="testimonial-image">
-                <img src="assets/testimo.jpg" alt="Dodid Wijanarko">
+                <img src="public/image/testimo.jpg" alt="Dodid Wijanarko">
             </div>
             <div class="testimonial-text">
                 <p class="quote">AP Arsitektur, sangat brillian dalam mengembangkan ide dan memberikan solusi dalam
@@ -149,17 +149,17 @@
     <div class="layanan-section">
 
         <div class="layanan-item" data-aos="fade-up" data-aos-duration="500">
-            <img src="assets/mitraac.png" alt="" a href="#">
+            <img src="public/image/mitraac.png" alt="" a href="#">
             <h3>Sejuk-aC</h3>
             <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, dolorum?</p> -->
         </div>
         <div class="layanan-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-            <img src="assets/mitramekap.png" alt="" a href="#">
+            <img src="public/image/mitramekap.png" alt="" a href="#">
             <h3>Evie MUA</h3>
             <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, dolorum?</p> -->
         </div>
         <div class="layanan-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <img src="assets/hairnerds.jpg" alt="" a href="#">
+            <img src="public/image/hairnerds.jpg" alt="" a href="#">
             <h3>Hairneds Studio</h3>
             <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, dolorum?</p> -->
         </div>
