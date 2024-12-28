@@ -1,22 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-//admin
-Route::middleware(['admin.auth'])->group(function () {
-    Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login.form');
-    Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->middleware('admin.auth');
-    Route::get('/admin/logout', [AdminController::class, 'logout']);
+Route::get('/', function () {
+    return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-//konsumen
-Route::get('/', [HomeController::class, 'index'])->name('index');
+require __DIR__.'/auth.php';
