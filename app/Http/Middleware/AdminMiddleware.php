@@ -1,13 +1,13 @@
 <?php
 
-namespace app\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
-class AdminAuth
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,9 @@ class AdminAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!session('admin_logged_in')) {
-            return redirect('/admin/login')->with('error', 'Silahkan masuk terlebih dahulu');
+        if (Auth::guard('admin')->check()) {
+            return $next($request);
         }
-
-        return $next($request);
+        return redirect('/admin/login')->with('error', 'Silahkan login sebagai admin terlebih dahulu.');
     }
 }

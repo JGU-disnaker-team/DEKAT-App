@@ -36,14 +36,24 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
+
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'konsumen' => [
+            'driver' => 'session',
+            'provider' => 'konsumens',
+        ],
+        'mitra' => [
+            'driver' => 'session',
+            'provider' => 'mitras',
+        ]
+
     ],
 
     /*
@@ -64,13 +74,19 @@ return [
     */
 
     'providers' => [
-        'admin' => [
+        'konsumens' => [
             'driver' => 'eloquent',
-            'model' => App\Models\admin::class,
+            'model' => env('AUTH_MODEL', App\Models\Konsumen::class),
         ],
-        'users' => [
+
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => env('AUTH_MODEL', App\Models\Admin::class),
+        ],
+
+        'mitras' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Mitra::class),
         ],
 
         // 'users' => [

@@ -7,11 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Admin extends Authenticatable
+class Mitra extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $guard = 'admin';  // Tentukan guard untuk admin
+    protected $guard = 'mitra';  // Tentukan guard untuk mitra
 
     /**
      * The attributes that are mass assignable.
