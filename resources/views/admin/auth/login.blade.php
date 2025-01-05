@@ -8,7 +8,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="title"><span>Admin</span></div>
+        <div class="title"><span>Admin Login</span></div>
         <form action="{{ route('login') }}" method="POST">
             @csrf
 
