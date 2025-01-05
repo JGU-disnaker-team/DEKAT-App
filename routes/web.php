@@ -5,8 +5,8 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
-})->name('index');
+    return view('welcome');
+})->name('welcome');
 
 //konsumen
 Route::get('/login', [LoginController::class, 'showKonsumenLoginForm'])->name('konsumen.login');
@@ -26,16 +26,16 @@ Route::middleware('admin')->group(function () {
 Route::get('/admin/login', [LoginController::class, 'showAdminLoginForm'])->name('admin.login');
 
 
-//mitra
-Route::middleware('mitra')->group(function () {
-    Route::get('/mitra/dashboard', function () {
-        return view('mitra.dashboard');
-    })->name('mitra.dashboard');
-});
-Route::get('/mitra/login', [LoginController::class, 'showMitraLoginForm'])->name('mitra.login');
+// //mitra
+// Route::middleware('mitra')->group(function () {
+//     Route::get('/mitra/dashboard', function () {
+//         return view('mitra.dashboard');
+//     })->name('mitra.dashboard');
+// });
+// Route::get('/mitra/login', [LoginController::class, 'showMitraLoginForm'])->name('mitra.login');
 
 
-//end
+// //end
 
 
 Route::get('/dashboard', function () {
