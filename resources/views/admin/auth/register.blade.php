@@ -9,16 +9,16 @@
 <body>
     <div class="wrapper">
         <div class="title"><span>Admin Register</span></div>
-        <form action="{{ route('register') }}" method="POST">
+        <form action="{{ route('admin.register') }}" method="POST">
             @csrf
 
             <!-- Name -->
-            <div class="row">
+            <!-- <div class="row">
                 <i class="fas fa-user"></i>
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
                     autofocus autocomplete="name" placeholder="Name" />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
-            </div>
+            </div> -->
 
             <!-- Email Address -->
             <div class="row">
@@ -62,7 +62,7 @@
         <!-- Sudah Punya Akun -->
         <div class="forgot-password">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                href="{{ route('login') }}">
+                href="{{ route('admin.login') }}">
                 {{ __('Already have an account?') }}
             </a>
         </div>

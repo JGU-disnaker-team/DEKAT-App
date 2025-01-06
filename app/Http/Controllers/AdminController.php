@@ -7,6 +7,24 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\admin;
 
+class RegisteredUserController extends Controller
+{
+    public function register(Request $request)
+    {
+        $validatedData = $request->validate([
+            'email' => 'required|string|email|max:255|unique:admin',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        Admin::create([
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+
+        return redirect()->route('admin.login')->with('success', 'Admin registered successfully!');
+    }
+}
+
 class AdminController extends Controller
 {
     public function showLoginForm()

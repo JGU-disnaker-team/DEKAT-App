@@ -10,7 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    protected $table = 'admin';
+    public $timestamps = false;
     protected $guard = 'admin';  // Tentukan guard untuk admin
 
     /**
