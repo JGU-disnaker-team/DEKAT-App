@@ -12,6 +12,14 @@
         <form action="{{ route('admin.register') }}" method="POST">
             @csrf
 
+            <!-- Name -->
+            <!-- <div class="row">
+                <i class="fas fa-user"></i>
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
+                    autofocus autocomplete="name" placeholder="Name" />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div> -->
+
             <!-- Email Address -->
             <div class="row">
                 <i class="fas fa-envelope"></i>
