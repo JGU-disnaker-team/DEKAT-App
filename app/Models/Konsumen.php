@@ -11,6 +11,7 @@ class Konsumen extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'konsumen';
     protected $guard = 'konsumen';  // Tentukan guard untuk konsumen
 
     /**
