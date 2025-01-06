@@ -17,8 +17,21 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::guard('admin')->check()) {
-            return $next($request);
+            return redirect('admin.login')->with('error', 'Silahkan login sebagai admin terlebih dahulu.');
         }
-        return redirect('/admin/login')->with('error', 'Silahkan login sebagai admin terlebih dahulu.');
+        return $next($request);
     }
+
+    protected function redirectTo($request)
+    {
+        // Jika rute mengarah ke admin
+        if ($request->is('admin/*')) {
+            return '/admin/login';
+        }
+
+        // Rute default untuk pengguna umum
+        return route('login');
+    }
+
 }
+
