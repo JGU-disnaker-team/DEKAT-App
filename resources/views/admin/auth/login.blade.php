@@ -9,7 +9,7 @@
 <body>
     <div class="wrapper">
         <div class="title"><span>Admin Login</span></div>
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('admin.login') }}" method="POST">
             @csrf
 
             <!-- Email Address -->
@@ -46,7 +46,7 @@
         <!-- dont have acc -->
         <div class="forgot-password">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                href="{{ route('register') }}">
+                href="{{ route('admin.register') }}">
                 {{ __("Don't have an account?") }}
             </a>
         </div>
