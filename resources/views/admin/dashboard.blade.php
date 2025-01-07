@@ -70,12 +70,24 @@
           <span class="links_name">Data Master</span>
         </a>
       </li>
-      <li class="log_out">
+      <!-- <li class="log_out">
         <a href="#">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span class="links_name">Log out</span>
+
+        </a>
+
+      </li> -->
+      <li class="log_out">
+        <a href="{{ route('admin.logout') }}"
+          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span class="links_name">Log out</span>
         </a>
       </li>
+      <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
     </ul>
   </div>
   <section class="home-section">
