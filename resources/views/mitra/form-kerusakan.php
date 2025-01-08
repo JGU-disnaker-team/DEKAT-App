@@ -141,9 +141,6 @@
                         <label class="block mb-2">Alasan</label>
                         <textarea name="alasan" rows="3" class="border rounded p-2 w-full"></textarea>
                     </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded">Kirim</button>
                 </form>
             </div>
 
