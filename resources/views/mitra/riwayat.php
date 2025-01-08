@@ -398,6 +398,10 @@
                             <i class="fa-regular fa-calendar"></i>
                             Jadwal
                         </a>
+                        <a href="saldoku.php"class="menu-item">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                            SaldoKu
+                        </a>
                         <a href="riwayat.php" class="menu-item">
                             <i class="fa-solid fa-clock-rotate-left"></i>
                             Riwayat

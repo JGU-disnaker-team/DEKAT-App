@@ -576,6 +576,10 @@ $profile_photo = "/api/placeholder/120/120"; // Ganti dengan path foto aktual da
                             <i class="fa-regular fa-calendar"></i>
                             Jadwal
                         </a>
+                        <a href="saldoku.php"class="menu-item">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                            SaldoKu
+                        </a>
                         <a href="riwayat.php" class="menu-item">
                             <i class="fa-solid fa-clock-rotate-left"></i>
                             Riwayat
