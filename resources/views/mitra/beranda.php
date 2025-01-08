@@ -598,13 +598,13 @@
             <div class="card saldo-info">
                 <h3>
                     Saldo Virtualmu!
-                    <a class="link" href="#">Lihat Log Penarikan</a>
+                    <a class="link" href="log-penarikan.php">Lihat Log Penarikan</a>
                 </h3>
                 <div class="balance-container">
                     <div class="balance">
                         Rp. 150.000
                     </div>
-                    <a class="link" href="#">Tarik</a>
+                    <a class="link" href="tarik-saldo.php">Tarik</a>
                 </div>
             </div>
 
@@ -617,13 +617,13 @@
                         <i class="fa-regular fa-calendar"></i>
                     </span>
                     <div class="order-details">
-                        <div class="order-name">Rini Ariyani</div>
+                        <div class="order-name">Siti Ariani</div>
                         <div class="order-location">
                             <i class="fa-solid fa-location-dot"></i>
                             Cibinong
                         </div>
                     </div>
-                    <a href="#" class="selengkapnya">Selengkapnya</a>
+                    <a href="jadwal.php" class="selengkapnya">Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -645,7 +645,7 @@
                 <tbody>
                     <tr>
                         <td>27 November 2024</td>
-                        <td>Rini Ariyani</td>
+                        <td>Siti Ariani</td>
                         <td>Cibinong</td>
                         <td>Perbaikan AC</td>
                         <td>Rp. 200.000</td>

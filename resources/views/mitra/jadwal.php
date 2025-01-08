@@ -490,7 +490,7 @@
                 <div class="customer-name">Siti Ariani</div>
                 <div class="customer-phone">0813 xxxx xxxx</div>
                 <div class="customer-address">Jl. Margonda Raya No 22, Pancoran Mas</div>
-                <a href="#" class="view-order-btn">Lihat Orderan</a>
+                <a href="order-details.php" class="view-order-btn">Lihat Orderan</a>
             </div>
             <div class="appointment-time">14.00 WIB</div>
         </div>
@@ -503,7 +503,7 @@
                 <div class="customer-name">Siti Ariani</div>
                 <div class="customer-phone">0813 xxxx xxxx</div>
                 <div class="customer-address">Jl. Margonda Raya No 22, Pancoran Mas</div>
-                <a href="#" class="view-order-btn">Lihat Orderan</a>
+                <a href="order-details.php" class="view-order-btn">Lihat Orderan</a>
             </div>
             <div class="appointment-time">14.00 WIB</div>
         </div>
