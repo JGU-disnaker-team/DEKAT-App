@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dekat - Jadwal</title>
+    <title>Riwayat</title>
     <script src="https://kit.fontawesome.com/58c31d4a0e.js" crossorigin="anonymous"></script>
     <style>
         * {
@@ -14,9 +14,12 @@
         }
 
         body {
-            background: #F8F9FE;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fe;
         }
 
+        /* New Nav Styles */
         nav {
             background: #00137F;
             padding: 0.8rem 2rem;
@@ -55,7 +58,7 @@
             color: white;
         }
 
-        /* Profile Dropdown Styles (from beranda page) */
+        /* Profile Dropdown Styles */
         .profile-dropdown {
             position: relative;
             display: inline-block;
@@ -97,8 +100,8 @@
         }
 
         .profile-pic {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: #E5E7EB;
         }
@@ -166,7 +169,7 @@
             background: white;
             min-width: 300px;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
             margin-top: 1rem;
         }
@@ -201,19 +204,6 @@
             transition: background 0.2s;
         }
 
-        .notification-item:hover {
-            background: #F3F4F6;
-        }
-
-        .notification-item i {
-            color: #6B7280;
-            width: 20px;
-        }
-
-        .notification-item:last-child {
-            border-bottom: none;
-        }
-
         .see-all {
             display: block;
             padding: 1rem;
@@ -224,171 +214,136 @@
             border-top: 1px solid #E5E7EB;
         }
 
-        .see-all:hover {
-            background: #F3F4F6;
+        /* Original Container Styles */
+        .container {
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .report-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .report-card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .report-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+        padding: 5px 0;
+        }
+
+        .report-info-label {
+            font-weight: bold;
+            flex: 1;
+            max-width: 150px; /* Anda bisa menyesuaikan lebar ini */
+        }
+
+        .report-info-value {
+            flex: 2;
+        }
+
+        .print-link {
+            text-align: right;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .print-link a {
+            color: #003580;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .print-link a:hover {
+            text-decoration: underline;
+        }
+
+        .date-picker {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .date-picker input {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-        }
+            
+            .container {
+                padding: 0 10px;
+            }
+            
+            .report-card {
+                padding: 10px;
+            }
 
-        /* Styles untuk content */
-        .content {
-            padding: 20px;
-            background-color: #E8EAF6;
-        }
-
-        .back-button {
-            font-size: 25px;
-            color: #0D47A1;
-            text-decoration: none;
-            margin: 20px;
-            display: inline-block;
-        }
-
-        .page-header {
-            background-color: #f8f8f8;
-            border-radius: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .page-title {
-            font-size: 28px;
-            color: #0D47A1;
-            font-weight: bold;
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-            background: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            gap: 10px;
-        }
-
-        .search-container input {
-            border: none;
-            outline: none;
-            font-size: 16px;
-            width: 200px;
-        }
-
-        .search-container .calendar-icon {
-            color: #666;
-        }
-
-        .section-title {
-            color: #0D47A1;
-            font-size: 20px;
-            margin: 20px;
-            font-weight: bold;
-        }
-
-        .appointments-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .appointment-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            display: flex;
-            gap: 15px;
-            position: relative;
-        }
-
-        .profile-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            aspect-ratio: 1/1;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .appointment-details {
-            flex: 1;
-        }
-
-        .customer-name {
-            color: #0D47A1;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .customer-phone {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .customer-address {
-            color: #333;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .appointment-time {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .view-order-btn {
-            color: #0D47A1;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-        .search-container {
-            width: 100%;
-            margin-top: 10px;
-        }
-        
-        .search-container input {
-            width: 100%;
-        }
-        
-        .appointments-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .page-header {
+            .report-info {
             flex-direction: column;
-            gap: 15px;
-        }
+            align-items: flex-start;
+            }
+
+            .report-info-label {
+                margin-bottom: 5px;
+            }
+
+            .report-info-value {
+                width: 100%;
+            }
+            
+            .title {
+                font-size: 20px;
+            }
+            
+            .date-picker {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .date-picker input {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- New Navigation -->
     <nav>
         <a href="beranda.php" class="brand">Dekat</a>
         <div class="nav-links">
             <a href="beranda.php">Dashboard</a>
-            <a href="jadwal.php" class="active">Jadwal</a>
+            <a href="jadwal.php">Jadwal</a>
             <a href="saldoku.php">Saldoku</a>
-            <a href="riwayat.php">Riwayat</a>
+            <a href="riwayat.php" class="active">Riwayat</a>
         </div>
 
         <div class="nav-icons">
@@ -405,7 +360,7 @@
                     </div>
                     <ul class="notification-list">
                         <li class="notification-item">
-                        <i class="fa-regular fa-envelope"></i>    
+                            <i class="fa-regular fa-envelope"></i>    
                             Tidak Ada Notifikasi.
                         </li>
                     </ul>
@@ -431,7 +386,7 @@
                         </div>
                     </div>
                     <div class="profile-menu">
-                        <a href="#" class="menu-item">
+                        <a href="ganti_sandi.php" class="menu-item">
                             <i class="fa-solid fa-lock"></i>
                             Ganti Kata Sandi
                         </a>
@@ -465,81 +420,60 @@
         </div>
     </nav>
 
-    <!-- Existing page content remains the same -->
-    <div class="content">
-    <a href="beranda.php" class="back-button">
-    <i class="fa-solid fa-arrow-left"></i>
-    </a>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="date-picker">
+            <label for="date">Tanggal:</label>
+            <input type="date" id="date" value="2025-01-10">
+        </div>
 
-    <div class="page-header">
-        <h1 class="page-title">Jadwalmu!</h1>
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Cari Tanggal...">
-            <i class="fas fa-calendar calendar-icon"></i>
+        <div class="title">Riwayat Laporan</div>
+
+        <div class="report-card">
+            <h3>Laporan Pekerjaan Teknisi AC</h3>
+            
+            <div class="report-info">
+                <span class="report-info-label">Tanggal</span>
+                <span class="report-info-value">10 Januari 2025</span>
+            </div>
+            
+            <div class="report-info">
+                <span class="report-info-label">Nama Teknisi</span>
+                <span class="report-info-value">Randi</span>
+            </div>
+            
+            <div class="report-info">
+                <span class="report-info-label">Lokasi</span>
+                <span class="report-info-value">Jl. Margonda Raya</span>
+            </div>
+            
+            <div class="report-info">
+                <span class="report-info-label">Jenis Layanan</span>
+                <span class="report-info-value">Perawatan dan Perbaikan</span>
+            </div>
+            
+            <div class="report-info">
+                <span class="report-info-label">Detail Pekerjaan</span>
+                <span class="report-info-value">-</span>
+            </div>
+            
+            <div class="print-link">
+                <a href="print.php">Print</a>
+            </div>
         </div>
     </div>
-
-    <h2 class="section-title">Hari Ini</h2>
-    <div class="appointments-grid" id="todayAppointments">
-        <div class="appointment-card">
-            <div class="profile-image">
-                <img src="/api/placeholder/60/60" alt="Profile" class="profile-pic">
-            </div>
-            <div class="appointment-details">
-                <div class="customer-name">Siti Ariani</div>
-                <div class="customer-phone">0813 xxxx xxxx</div>
-                <div class="customer-address">Jl. Margonda Raya No 22, Pancoran Mas</div>
-                <a href="order-details.php" class="view-order-btn">Lihat Orderan</a>
-            </div>
-            <div class="appointment-time">14.00 WIB</div>
-        </div>
-
-        <div class="appointment-card">
-            <div class="profile-image">
-                <img src="/api/placeholder/60/60" alt="Profile" class="profile-pic">
-            </div>
-            <div class="appointment-details">
-                <div class="customer-name">Siti Ariani</div>
-                <div class="customer-phone">0813 xxxx xxxx</div>
-                <div class="customer-address">Jl. Margonda Raya No 22, Pancoran Mas</div>
-                <a href="order-details.php" class="view-order-btn">Lihat Orderan</a>
-            </div>
-            <div class="appointment-time">14.00 WIB</div>
-        </div>
-        <!-- Repeat for other appointments -->
-    </div>
-
-    <h2 class="section-title">Besok</h2>
-    <div class="appointments-grid" id="tomorrowAppointments">
-        <div class="appointment-card">
-            <div class="profile-image">
-                <img src="/api/placeholder/60/60" alt="Profile" class="profile-pic">
-            </div>
-            <div class="appointment-details">
-                <div class="customer-name">Siti Ariani</div>
-                <div class="customer-phone">0813 xxxx xxxx</div>
-                <div class="customer-address">Jl. Margonda Raya No 22, Pancoran Mas</div>
-                <a href="#" class="view-order-btn">Lihat Orderan</a>
-            </div>
-            <div class="appointment-time">14.00 WIB</div>
-        </div>
-        <!-- Repeat for other appointments -->
-    </div>
-</div>
 
     <script>
-        // JavaScript for profile and notification dropdowns (same as beranda page)
+        // Profile and Notification Dropdowns
         const profileButton = document.getElementById('profileButton');
         const profileDropdown = document.getElementById('profileDropdown');
+        const notificationButton = document.getElementById('notificationButton');
+        const notificationDropdown = document.getElementById('notificationDropdown');
         const closeButtons = document.querySelectorAll('.close-button');
 
         profileButton.addEventListener('click', () => {
             profileDropdown.classList.toggle('show');
         });
-
-        const notificationButton = document.getElementById('notificationButton');
-        const notificationDropdown = document.getElementById('notificationDropdown');
 
         notificationButton.addEventListener('click', () => {
             notificationDropdown.classList.toggle('show');
@@ -560,6 +494,12 @@
             if (!notificationButton.contains(e.target) && !notificationDropdown.contains(e.target)) {
                 notificationDropdown.classList.remove('show');
             }
+        });
+
+        // Original date picker functionality
+        const dateInput = document.getElementById('date');
+        dateInput.addEventListener('change', function() {
+            alert(`You selected: ${this.value}`);
         });
     </script>
 </body>

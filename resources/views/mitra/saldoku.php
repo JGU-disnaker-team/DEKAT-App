@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+<title>Saldoku - Dekat</title>
 <script src="https://kit.fontawesome.com/58c31d4a0e.js" crossorigin="anonymous"></script>
 <style>
     * {
@@ -15,9 +15,6 @@
 
         body {
             background-color: #F8F9FE;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         nav {
@@ -231,267 +228,163 @@
             background: #F3F4F6;
         }
 
-        .user-greeting {
-            display: flex;
-            align-items: center;
-            padding: 2rem 2.5rem;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        .user-greeting img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-right: 1.5rem;
-        }
-
-        .user-greeting .text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .user-greeting .text h2 {
-            font-size: 1.75rem;
-            color: #000000;
-            margin-bottom: 0.25rem;
-            font-weight: bold;
-        }
-
-        .user-greeting .text p {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1,4;
-        }
-
         .main-content {
             flex: 1;
             padding: 2rem;
         }
 
         .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .tab-menu {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: #00137F;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            padding: 1.5rem;
-        }
-
-        .card.saldo-info {
-            background-color: #f8f8f8;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
-        .card.saldo-info h3 {
-            font-size: 1.25rem;
-            color: #00137F;
-            margin: 0;
+        .tab-button {
+            padding: 8px 16px;
+            border: none;
+            font-size: 16px;
+            background: none;
+            color: #333;
+            cursor: pointer;
             font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .saldo-info .link {
-            color: #0056b3;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .saldo-info .balance-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 1rem;
-        }
-
-        .saldo-info .balance {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #00137F;
-        }
-
-        .status {
-            background: #f0ad4e;
+        .tab-button.active {
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.875rem;
+            background-color: #0047FF;
+            border-radius: 5px;
+        }
+
+        .status-pill {
             display: inline-block;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            background-color: #FFE4C4;
+            color: #8B4513;
         }
 
-        .order-box {
-            background-color: #f8f8f8;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+        .warning-pill {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            background-color: #FFE9E9;
+            color: #FF0000;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: fit-content;
         }
 
-        .order-box h3 {
-            font-size: 1.25rem;
-            color: #00137F;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .order-item-box {
+        .order-card {
             background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            position: relative;
-            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .order-date {
-            display: block;
-            font-size: 1.25rem;
-            color: #00137F;
-            font-weight: bold;
-            margin-bottom: 1rem;
+        .order-header {
+            background-color: #00208F;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .order-date i {
-            margin-left: 0.5rem;
+        .timer {
+            color: #FF0000;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .timer::before {
+            content: "⏱";
+        }
+
+        .order-content {
+            padding: 20px;
+        }
+
+        .order-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
         .order-details {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
-        .order-name {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #00137F;
-        }
-
-        .order-location {
-            font-size: 1rem;
+        .detail-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
             color: #666;
         }
 
-        .order-location i {
-            margin-right: 0.5rem;
-            color: #00137F;
+        .warranty-info {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            row-gap: 15px;
+            padding: 0 10px;
         }
 
-        .selengkapnya {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            color: #0047FF;
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: bold;
+        .warranty-label {
+            color: #666;
+            font-size: 14px;
         }
 
-        .selengkapnya:hover {
-            text-decoration: underline;
+        .warranty-value {
+            text-align: right;
+            font-size: 14px;
         }
 
-        
-        .table-container {
-            overflow-x: auto;
-        }
-
-        .table-container h3 {
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            color: #00137F;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #00137F;
-            color: white;
-        }
-
-        td {
-            background-color: #f9f9f9;
-        }
-
-        .status.proses {
-            background-color: #28a745;
-        }
-
-        .status.selesai {
-            background-color: #007bff;
-        }
-
-        @media (max-width: 768px) {
-        .nav-links{
+        .tab-content {
             display: none;
         }
 
-        .user-greeting {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem 1.5rem;  /* Adjusted padding for mobile */
-        }
-
-        .user-greeting img {
-            margin-bottom: 1.5rem;
-            margin-right: 0;  /* Remove right margin on mobile */
-        }
-
-        .user-greeting .text {
-            align-items: center;
-        }
-
-        .user-greeting .text h2 {
-            font-size: 1.5rem;  /* Slightly smaller on mobile */
-        }
-
-        .card.saldo-info {
-            padding: 1rem;
-        }
-        
-        .saldo-info .balance {
-            font-size: 1.25rem;
-        }
-
-        .order-item-box {
-        padding: 1rem;
-        }
-        
-        .selengkapnya {
-            position: static;
-            margin-top: 1rem;
+        .tab-content.active {
             display: block;
         }
-        
-        .order-date {
-            font-size: 1rem;
+
+        #status-tab, #garansi-tab {
+            width: 100%;
+            position: relative;
         }
+
+    @media (max-width: 768px) {
+        .nav-links{
+            display: none;
         }
+        .container {
+            padding: 0 10px;
+        }
+            
+        .warranty-info {
+            grid-template-columns: 1fr;
+        }
+            
+        .warranty-value {
+            text-align: left;
+        }
+    }
 
 
     </style>
@@ -500,9 +393,9 @@
     <nav>
         <a href="beranda.php" class="brand">Dekat</a>
         <div class="nav-links">
-            <a href="beranda.php" class="active">Dashboard</a>
+            <a href="beranda.php">Dashboard</a>
             <a href="jadwal.php">Jadwal</a>
-            <a href="saldoku.php">Saldoku</a>
+            <a href="saldoku.php" class="active">Saldoku</a>
             <a href="riwayat.php">Riwayat</a>
         </div>
 
@@ -580,97 +473,190 @@
         </div>
     </nav>
 
-    <!-- Existing page content remains the same -->
-
-        <!-- User Greeting -->
-    <div class="user-greeting">
-        <img src="https://via.placeholder.com/60" alt="Foto Profil">
-        <div class="text">
-            <h2>Selamat Datang, PT Agung Cahyo!</h2>
-            <p>Semoga harimu menyenangkan.</p>
-        </div>
-    </div>
-
     <!-- Main Content -->
-    <div class="main-content">
-        <div class="container">
-             <!-- Card Saldo Info -->
-            <div class="card saldo-info">
-                <h3>
-                    Saldo Virtualmu!
-                    <a class="link" href="log-penarikan.php">Lihat Log Penarikan</a>
-                </h3>
-                <div class="balance-container">
-                    <div class="balance">
-                        Rp. 150.000
-                    </div>
-                    <a class="link" href="tarik-saldo.php">Tarik</a>
-                </div>
-            </div>
+    <div class="container">
+    <div class="tab-menu">
+        <button class="tab-button active" onclick="showTab('status')">Status Transaksi</button>
+        <button class="tab-button" onclick="showTab('garansi')">Garansi</button>
+    </div>
 
-            <h2 class="section-title">Jadwal Orderan</h2>
-            <div class="order-box">
-                <h3>Pesanan Mendatang</h3>
-                <div class="order-item-box">
-                    <span class="order-date">
-                        27 November 2024
-                        <i class="fa-regular fa-calendar"></i>
-                    </span>
-                    <div class="order-details">
-                        <div class="order-name">Siti Ariani</div>
-                        <div class="order-location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Cibinong
-                        </div>
+    <!-- Status Tab Content -->
+    <div id="status-tab" class="tab-content active">
+        <div class="order-card">
+            <div class="order-header">
+                <span>10 Januari 2025 16:24 WIB</span>
+                <span class="status-tag">Dapat dicairkan</span>
+            </div>
+            <div class="order-content">
+                <div class="status-pill completed">Selesai</div>
+                <div class="order-title">
+                    <h3>Orderan Siti Ariani · Perawatan dan Service</h3>
+                    <span>Rp 150.000</span>
+                </div>
+                <div class="order-details">
+                    <div class="detail-item">
+                        <span>📍</span>
+                        <span>Jl. Margonda Raya No 22, Pancoran Mas</span>
                     </div>
-                    <a href="jadwal.php" class="selengkapnya">Selengkapnya</a>
+                    <div class="detail-item">
+                        <span>🕒</span>
+                        <span>13 : 00 WIB</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🔧</span>
+                        <span>AC nya kotor, Remote Rusak</span>
+                    </div>
+                </div>
+                <div class="warranty-info">
+                    <div class="warranty-label">Jenis AC :</div>
+                    <div class="warranty-value">Standing AC, 2 PK</div>
+                    
+                    <div class="warranty-label">Jumlah :</div>
+                    <div class="warranty-value">1</div>
+                    
+                    <div class="warranty-label">Metode Pembayaran :</div>
+                    <div class="warranty-value">BCA Virtual Account</div>
                 </div>
             </div>
         </div>
 
-        <!-- Tabel Pesanan -->
-        <div class="table-container">
-            <h3>Pesanan Terakhir</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tanggal</th>
-                        <th>Nama</th>
-                        <th>Lokasi</th>
-                        <th>Layanan</th>
-                        <th>Total Harga</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>27 November 2024</td>
-                        <td>Siti Ariani</td>
-                        <td>Cibinong</td>
-                        <td>Perbaikan AC</td>
-                        <td>Rp. 200.000</td>
-                        <td><span class="status proses">Proses</span></td>
-                    </tr>
-                    <tr>
-                        <td>23 November 2024</td>
-                        <td>Anindya</td>
-                        <td>GDC</td>
-                        <td>Tambah Freon</td>
-                        <td>Rp. 150.000</td>
-                        <td><span class="status selesai">Selesai</span></td>
-                    </tr>
-                    <tr>
-                        <td>20 November 2024</td>
-                        <td>Nopal</td>
-                        <td>Cibinong</td>
-                        <td>Instalasi AC</td>
-                        <td>Rp. 350.000</td>
-                        <td><span class="status selesai">Selesai</span></td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Order kedua dalam status -->
+        <div class="order-card">
+            <div class="order-header">
+                <span>10 Januari 2025 16:24 WIB</span>
+                <span>Diproses</span>
+            </div>
+            <div class="order-content">
+                <div class="status-pill in-progress">Dalam Proses</div>
+                <div class="order-title">
+                    <h3>Orderan Siti Ariani · Perawatan dan Service</h3>
+                    <span>Rp 150.000</span>
+                </div>
+                <div class="order-details">
+                    <div class="detail-item">
+                        <span>📍</span>
+                        <span>Jl. Margonda Raya No 22, Pancoran Mas</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🕒</span>
+                        <span>13 : 00 WIB</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🔧</span>
+                        <span>AC nya kotor, Remote Rusak</span>
+                    </div>
+                </div>
+                <div class="warranty-info">
+                    <div class="warranty-label">Jenis AC :</div>
+                    <div class="warranty-value">Standing AC, 2 PK</div>
+                    
+                    <div class="warranty-label">Jumlah :</div>
+                    <div class="warranty-value">1</div>
+                    
+                    <div class="warranty-label">Metode Pembayaran :</div>
+                    <div class="warranty-value">BCA Virtual Account</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Garansi Tab Content -->
+    <div id="garansi-tab" class="tab-content">
+        <!-- First warranty card -->
+        <div class="order-card">
+            <div class="order-header">
+                <span>10 Januari 2025 16:24 WIB</span>
+                <span class="timer">03:00:00:00</span>
+            </div>
+            <div class="order-content">
+                <div class="status-pill">Dalam Proses Garansi</div>
+                <div class="order-title">
+                    <h3>Orderan Siti Ariani · Perawatan dan Service</h3>
+                </div>
+                <div class="order-details">
+                    <div class="detail-item">
+                        <span>📍</span>
+                        <span>Jl. Margonda Raya No 22, Pancoran Mas</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🕒</span>
+                        <span>13 : 00 WIB</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🔧</span>
+                        <span>AC nya Kotor, Remote Rusak</span>
+                    </div>
+                </div>
+                <div class="warranty-info">
+                    <div class="warranty-label">Jenis AC :</div>
+                    <div class="warranty-value">Standing AC, 2 PK</div>
+                    
+                    <div class="warranty-label">Jumlah :</div>
+                    <div class="warranty-value">1</div>
+                    
+                    <div class="warranty-label">Metode Pembayaran :</div>
+                    <div class="warranty-value">BCA Virtual Account</div>
+                    
+                    <div class="warranty-label">Id Orderan :</div>
+                    <div class="warranty-value">D324565</div>
+                    
+                    <div class="warranty-label">Jenis Layanan :</div>
+                    <div class="warranty-value">Service</div>
+                    
+                    <div class="warranty-label">Tanggal Pelayanan :</div>
+                    <div class="warranty-value">10 Januari 2025</div>
+                    
+                    <div class="warranty-label">Masa Garansi :</div>
+                    <div class="warranty-value">13 Januari 2025</div>
+                    
+                    <div class="warranty-label">Keluhan :</div>
+                    <div class="warranty-value">Remote Rusak</div>
+                    
+                    <div class="warranty-label">Riwayat Layanan Sebelumnya :</div>
+                    <div class="warranty-value">Tambah Freon</div>
+                    
+                    <div class="warranty-label">Nama Teknisi :</div>
+                    <div class="warranty-value">Raden</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second warranty card -->
+        <div class="order-card">
+            <div class="order-header">
+                <span>10 Januari 2025 16:24 WIB</span>
+                <span class="timer">02:03:23:00</span>
+            </div>
+            <div class="order-content">
+                <div class="warning-pill">⚠️ Ada Keluhan</div>
+                <div class="order-title">
+                    <h3>Orderan Siti Ariani · Perawatan dan Service</h3>
+                </div>
+                <div class="order-details">
+                    <div class="detail-item">
+                        <span>📍</span>
+                        <span>Jl. Margonda Raya No 22, Pancoran Mas</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🕒</span>
+                        <span>13 : 00 WIB</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>🔧</span>
+                        <span>AC nya Kotor, Remote Rusak</span>
+                    </div>
+                </div>
+                <div class="warranty-info">
+                    <div class="warranty-label">Jenis AC :</div>
+                    <div class="warranty-value">Standing AC, 2 PK</div>
+                    
+                    <div class="warranty-label">Jumlah :</div>
+                    <div class="warranty-value">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
     <script>
@@ -706,6 +692,20 @@
                 notificationDropdown.classList.remove('show');
             }
         });
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
+        }
     </script>
 </body>
 </html>
