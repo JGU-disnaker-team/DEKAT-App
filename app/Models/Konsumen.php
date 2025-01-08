@@ -21,6 +21,7 @@ class Konsumen extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'no-telp',
         'email',
         'password',
     ];

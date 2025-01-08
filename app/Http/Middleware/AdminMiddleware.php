@@ -30,7 +30,7 @@ class AdminMiddleware
         }
 
         // Rute default untuk pengguna umum
-        return route('login');
+        return route('admin.login');
     }
 
 }

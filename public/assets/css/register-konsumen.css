@@ -1,0 +1,121 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 55%;
+    height: 100vh;
+    position: relative;
+}
+
+.form-section {
+    width: 65%;
+    padding: 20px 60px;
+    overflow-y: auto;
+    margin-top: 40px;
+    margin-left: 90px;
+}
+
+.image-section {
+    width: 35%;
+    background: url("banner_signup.png") no-repeat;
+    background-position: center;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 30px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    z-index: 1; /* Pastikan gambar berada di bawah teks */
+}
+
+.image-section img {
+    max-width: 215%; /* Mengecilkan ukuran gambar */
+    margin-left: -50px; /* Memberi jarak dari kiri */
+    margin-top: 70px;
+}
+
+h1 {
+    font-weight: bold;
+    color: #0046b8;
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group i {
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    color: #0046b8;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 8px 12px 6px 35px;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+button {
+    width: 20%;
+    padding: 12px;
+    background: #0046b8;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #0046b8;
+    text-decoration: none;
+}
+
+.welcome-text {
+    color: white;
+    font-size: 22px;
+    max-width: 280px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 15px;
+    position: absolute; /* Menggunakan absolute untuk kontrol posisi yang lebih baik */
+    padding: 20px;
+    z-index: 2; /* Pastikan teks muncul di atas gambar */
+    top: 40%; /* Posisikan teks di tengah secara vertikal */
+    transform: translateY(-50%); /* Pusatkan vertikal */
+    width: 90%; /* Atur lebar teks agar responsif */
+}
+
+.password-instructions {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Konsumen;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -31,19 +31,21 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'no-telp' => ['required', 'string', 'max:13'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Konsumen::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
+        $konsumen = Konsumen::create([
             'name' => $request->name,
+            'no-telp' => $request->notelp,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        event(new Registered($konsumen));
 
-        Auth::login($user);
+        Auth::guard('konsumen')->login($konsumen);
 
         return redirect(route('dashboard', absolute: false));
     }
