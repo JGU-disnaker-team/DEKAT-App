@@ -79,13 +79,13 @@
 
       </li> -->
       <li class="log_out">
-        <a href="{{ route('logout') }}"
+        <a href="{{ route('admin.logout') }}"
           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span class="links_name">Log out</span>
         </a>
       </li>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
         @csrf
       </form>
     </ul>
