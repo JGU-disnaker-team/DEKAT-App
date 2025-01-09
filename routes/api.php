@@ -16,4 +16,4 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::apiResource('todos', TodoController::class);
+Route::apiResource('todos', TodoController::class)->middleware('auth:sanctum');

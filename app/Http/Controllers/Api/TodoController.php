@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Todo;
 
 class TodoController extends Controller
 {
@@ -11,8 +12,11 @@ class TodoController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        dd('EWtf');
+    { return response()->json([
+
+        'todos' => Todo::latest()->get(),
+
+       ]);
     }
 
     /**
