@@ -376,11 +376,11 @@
         .container {
             padding: 0 10px;
         }
-            
+
         .warranty-info {
             grid-template-columns: 1fr;
         }
-            
+
         .warranty-value {
             text-align: left;
         }
@@ -413,13 +413,13 @@
                     </div>
                     <ul class="notification-list">
                         <li class="notification-item">
-                        <i class="fa-regular fa-envelope"></i>    
+                        <i class="fa-regular fa-envelope"></i>
                             Tidak Ada Notifikasi.
                         </li>
                     </ul>
                     <a href="#" class="see-all">Lihat semua notifikasi</a>
                 </div>
-            </div>          
+            </div>
 
             <div class="profile-dropdown">
                 <i class="fa-regular fa-user" id="profileButton"></i>
@@ -510,10 +510,10 @@
                 <div class="warranty-info">
                     <div class="warranty-label">Jenis AC :</div>
                     <div class="warranty-value">Standing AC, 2 PK</div>
-                    
+
                     <div class="warranty-label">Jumlah :</div>
                     <div class="warranty-value">1</div>
-                    
+
                     <div class="warranty-label">Metode Pembayaran :</div>
                     <div class="warranty-value">BCA Virtual Account</div>
                 </div>
@@ -549,10 +549,10 @@
                 <div class="warranty-info">
                     <div class="warranty-label">Jenis AC :</div>
                     <div class="warranty-value">Standing AC, 2 PK</div>
-                    
+
                     <div class="warranty-label">Jumlah :</div>
                     <div class="warranty-value">1</div>
-                    
+
                     <div class="warranty-label">Metode Pembayaran :</div>
                     <div class="warranty-value">BCA Virtual Account</div>
                 </div>
@@ -590,31 +590,31 @@
                 <div class="warranty-info">
                     <div class="warranty-label">Jenis AC :</div>
                     <div class="warranty-value">Standing AC, 2 PK</div>
-                    
+
                     <div class="warranty-label">Jumlah :</div>
                     <div class="warranty-value">1</div>
-                    
+
                     <div class="warranty-label">Metode Pembayaran :</div>
                     <div class="warranty-value">BCA Virtual Account</div>
-                    
+
                     <div class="warranty-label">Id Orderan :</div>
                     <div class="warranty-value">D324565</div>
-                    
+
                     <div class="warranty-label">Jenis Layanan :</div>
                     <div class="warranty-value">Service</div>
-                    
+
                     <div class="warranty-label">Tanggal Pelayanan :</div>
                     <div class="warranty-value">10 Januari 2025</div>
-                    
+
                     <div class="warranty-label">Masa Garansi :</div>
                     <div class="warranty-value">13 Januari 2025</div>
-                    
+
                     <div class="warranty-label">Keluhan :</div>
                     <div class="warranty-value">Remote Rusak</div>
-                    
+
                     <div class="warranty-label">Riwayat Layanan Sebelumnya :</div>
                     <div class="warranty-value">Tambah Freon</div>
-                    
+
                     <div class="warranty-label">Nama Teknisi :</div>
                     <div class="warranty-value">Raden</div>
                 </div>
@@ -649,7 +649,7 @@
                 <div class="warranty-info">
                     <div class="warranty-label">Jenis AC :</div>
                     <div class="warranty-value">Standing AC, 2 PK</div>
-                    
+
                     <div class="warranty-label">Jumlah :</div>
                     <div class="warranty-value">1</div>
                 </div>
@@ -701,7 +701,7 @@
             document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
-            
+
             // Show selected tab
             document.getElementById(tabName + '-tab').classList.add('active');
             document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
