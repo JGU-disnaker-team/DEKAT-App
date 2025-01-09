@@ -143,17 +143,19 @@
     </div>
 
     <script>
-        const togglePassword = document.getElementById('toggle-password');
-        const passwordField = document.getElementById('password-field');
-        const eyeIcon = document.getElementById('eye-icon');
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePassword = document.getElementById('toggle-password');
+            const passwordField = document.getElementById('password-field');
+            const eyeIcon = document.getElementById('eye-icon');
 
-        togglePassword.addEventListener('click', () => {
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
+            togglePassword.addEventListener('click', () => {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
 
-            // Toggle icon appearance
-            eyeIcon.classList.toggle('text-gray-400');
-            eyeIcon.classList.toggle('text-custom-blue');
+                // Toggle icon appearance
+                eyeIcon.classList.toggle('text-gray-400');
+                eyeIcon.classList.toggle('text-custom-blue');
+            });
         });
     </script>
 </body>
