@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderan Baru</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         /* Reset CSS */
         * {
@@ -236,6 +237,54 @@
             font-size: 1rem;
             display: none;
         }
+
+        .rating-section {
+            padding: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 1.5rem;
+        }
+        
+        .star-btn {
+            transition: transform 0.2s;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .star-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .star-btn.active svg {
+            fill: #FCD34D;
+            stroke: #F59E0B;
+        }
+
+        .comment-section {
+            margin-top: 1rem;
+        }
+
+        .comment-section textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .submit-rating {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-rating:hover {
+            background-color: #1d4ed8;
+        }
     </style>
 </head>
 <body>
@@ -310,6 +359,59 @@
             <p class="status-message" id="confirmationMessage" style="display: none; color: #10b981;">
                 Anda telah mengkonfirmasi sampai! Isi form kerusakan <a href="form-kerusakan.php" style="color: #2563eb; text-decoration: underline;">di sini</a>.
             </p>
+
+            <div class="rating-section">
+                <h3 class="text-xl font-bold text-center mb-4">Pesanan Telah Selesai!</h3>
+                <p class="text-lg font-semibold text-center mb-3">Isi Rating Pengguna ini</p>
+
+                <div class="flex justify-center gap-2 mb-4">
+                    <!-- Star Rating -->
+                    <button class="star-btn p-1" data-rating="1">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </button>
+                    <!-- Repeat for 5 stars -->
+                    <button class="star-btn p-1" data-rating="2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </button>
+                    <button class="star-btn p-1" data-rating="3">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </button>
+                    <button class="star-btn p-1" data-rating="4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </button>
+                    <button class="star-btn p-1" data-rating="5">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Comment section & submit button -->
+                <div class="comment-section">
+                    <textarea  
+                        placeholder="Berikan komentar Anda..."
+                        rows="3"
+                    ></textarea>
+                    <button class="submit-rating w-full">
+                    Kirim Rating
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div id="completion-section" class="mt-6 border-t pt-4">
+            <div class="text-center">
+                <p class="text-xl font-bold text-green-600 mb-4">Pesanan Telah Selesai!</p>
+            </div>
         </div>
     </div>
 
@@ -411,6 +513,101 @@
         // Initialize timer when page loads
         document.addEventListener('DOMContentLoaded', function () {
             startTimer(600);
+        });
+
+        // Star rating functionality
+        document.querySelectorAll('.star-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const rating = button.dataset.rating;
+                const stars = document.querySelectorAll('.star-btn');
+                
+                stars.forEach(star => {
+                    if (star.dataset.rating <= rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Existing scripts plus rating functionality
+        document.querySelectorAll('.star-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const rating = button.dataset.rating;
+                const stars = document.querySelectorAll('.star-btn');
+                
+                stars.forEach(star => {
+                    if (star.dataset.rating <= rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Function to show rating section
+        function showRatingSection() {
+            // Check if we came from form-kerusakan.php completion
+            const fromFormCompletion = sessionStorage.getItem('formCompleted');
+            const ratingSection = document.querySelector('.rating-section');
+            const actionButton = document.querySelector('.action-button');
+            const statusMessage = document.getElementById('statusMessage');
+            const confirmationContainer = document.getElementById('confirmationContainer');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+
+            if (fromFormCompletion === 'true') {
+                // Hide other elements
+                if (actionButton) actionButton.style.display = 'none';
+                if (statusMessage) statusMessage.style.display = 'none';
+                if (confirmationContainer) confirmationContainer.style.display = 'none';
+                if (confirmationMessage) confirmationMessage.style.display = 'none';
+
+                // Show rating section
+                if (ratingSection) {
+                    ratingSection.style.display = 'block';
+                }
+            } else {
+                // Hide rating section if not coming from form completion
+                if (ratingSection) {
+                    ratingSection.style.display = 'none';
+                }
+            }
+        }
+
+        // Function to handle rating submission
+        function submitRating() {
+            const ratingValue = document.querySelector('.star-btn.active')?.dataset.rating;
+            const commentValue = document.querySelector('.comment-section textarea').value;
+            
+            // Here you would typically send this data to your backend
+            console.log('Rating:', ratingValue, 'Comment:', commentValue);
+            
+            // Show success message
+            const ratingSection = document.querySelector('.rating-section');
+            ratingSection.innerHTML = `
+                <div class="text-center p-4">
+                    <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <h3 class="text-xl font-bold text-green-600 mb-2">Terima Kasih Atas Penilaian Anda!</h3>
+                    <p class="text-gray-600">Rating dan komentar Anda telah berhasil dikirim.</p>
+                </div>
+            `;
+            
+            // Clear the form completion flag
+            sessionStorage.removeItem('formCompleted');
+        }
+
+        // Add event listener for the submit rating button
+        document.addEventListener('DOMContentLoaded', function() {
+            showRatingSection();
+            
+            const submitButton = document.querySelector('.submit-rating');
+            if (submitButton) {
+                submitButton.addEventListener('click', submitRating);
+            }
         });
     </script>
 </body>
